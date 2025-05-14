@@ -1,0 +1,13 @@
+/* src/index.css */
+@import "tailwindcss";
+
+body {
+  font-family: "Montserrat", sans-serif; /* Aquí aplicas la fuente globalmente */
+  @apply bg-cover bg-center bg-fixed;
+  background-image: url("/fondo.png");
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
