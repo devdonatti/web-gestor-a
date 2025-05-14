@@ -12,8 +12,8 @@ const Footer = () => {
     <footer className="bg-gray text-white font-montserrat  shadow-xl">
       <div className="container mx-auto lg:px-24 px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo */}
-        <div className="mb-4 md:mb-0 flex items-center">
-          <img src="/logo.png" className="h-24 w-auto" alt="Logo" />
+        <div className="mb-4 md:mb-0 flex justify-center items-center md:justify-start">
+          <img src="/logo.png" className=" h-24 w-auto" alt="Logo" />
         </div>
         {/* Servicios */}
         <div>

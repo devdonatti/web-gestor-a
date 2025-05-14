@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -24,11 +25,19 @@ const Contacto = () => {
       )
       .then(
         (response) => {
-          alert("Mensaje enviado con éxito");
+          toast.success("Mensaje enviado con éxito 🎉", {
+            position: "top-center",
+            autoClose: 3000,
+            theme: "colored",
+          });
           setFormData({ nombre: "", email: "", mensaje: "" });
         },
         (error) => {
-          alert("Error al enviar el mensaje");
+          toast.error("Error al enviar el mensaje 😕", {
+            position: "top-center",
+            autoClose: 3000,
+            theme: "colored",
+          });
           console.error("Error:", error);
         }
       );
@@ -37,7 +46,7 @@ const Contacto = () => {
   return (
     <div
       id="contacto"
-      className="p-4 lg:p-20 flex flex-col items-center justify-center bg-gradient-to-r from-blue-800 to-gray-300"
+      className="p-4 lg:p-20 flex flex-col items-center justify-center "
     >
       <h1 className="text-4xl  font-bold font-montserrat mb-8 p-4 leading-normal uppercase text-white">
         Contactame
@@ -72,7 +81,7 @@ const Contacto = () => {
           rows="5"
           required
         />
-        <button className="shadow-xl hover:shadow-blue-800 text-white border-2 border-blue-700 bg-blue-800 hover:bg-gray-300 rounded-lg py-4 px-8 my-6 uppercase text-xl font-bold">
+        <button className="shadow-xl hover:shadow-blue-800 text-white border-2 border-gray-400 bg-blue-800 hover:bg-gray-300 rounded-lg py-4 px-8 my-6 uppercase text-xl font-bold">
           Enviar
         </button>
       </form>

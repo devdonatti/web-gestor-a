@@ -71,7 +71,7 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#quienes-somos" className="block">
+            <a href="#nosotros" className="block">
               Nosotros
             </a>
           </li>

@@ -19,8 +19,8 @@ const Servicios = () => {
       </h1>
 
       {/* Tarjetas de servicios */}
-      <div className="max-w-3xl mx-auto mb-6">
-        <div className="bg-blue-900 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+      <div className="max-w-3xl mx-auto mb-6 ">
+        <div className="bg-blue-800 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
           <p className="text-base md:text-lg font-montserrat text-white leading-relaxed">
             <span className="text-xl font-bold">INSCRIPCIONES INICIALES</span>
           </p>
@@ -28,7 +28,7 @@ const Servicios = () => {
       </div>
 
       <div className="max-w-3xl mx-auto mb-6">
-        <div className="bg-blue-900 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+        <div className="bg-blue-800 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
           <p className="text-base md:text-lg font-montserrat text-white leading-relaxed">
             <span className="text-xl font-bold">TRANSFERENCIAS AUTOMOTOR</span>
           </p>
@@ -36,7 +36,7 @@ const Servicios = () => {
       </div>
 
       <div className="max-w-3xl mx-auto mb-6">
-        <div className="bg-blue-900 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+        <div className="bg-blue-800 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
           <p className="text-base md:text-lg font-montserrat text-white leading-relaxed">
             <span className="text-xl font-bold">TRÁMITES VARIOS</span>
             <ul className="mt-4 list-disc pl-6">
@@ -57,7 +57,7 @@ const Servicios = () => {
       {/* Botón de consulta */}
       <div className="flex justify-center mt-8 z-20 relative">
         <a
-          className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+          className="bg-blue-800 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
           href="https://wa.me/1150406299 "
         >
           CONSULTA via whatsapp

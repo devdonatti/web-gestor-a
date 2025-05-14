@@ -41,7 +41,7 @@ const Catalogo = () => {
         {productos.map((producto) => (
           <div
             key={producto.id}
-            className="bg-white rounded-lg shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl duration-300"
+            className="bg-white rounded-lg  text-center shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl duration-300"
           >
             {/* Imagen del producto */}
             <img
@@ -61,7 +61,7 @@ const Catalogo = () => {
               href={producto.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-800 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300"
+              className="bg-blue-800  text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300"
             >
               Comprar Ahora
             </a>
@@ -70,7 +70,7 @@ const Catalogo = () => {
       </div>
       <div className="flex justify-center">
         <Link to="/productos">
-          <button className="bg-blue-600 mt-5 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300">
+          <button className="bg-blue-800 mt-5 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300">
             Ver más
           </button>
         </Link>
