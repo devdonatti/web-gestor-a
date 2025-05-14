@@ -1,12 +1,33 @@
-import React, { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navRef = useRef(null);
+
+  // Cerrar menú si se hace clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleMenuClick = () => {
+    setOpen(false); // Cierra el menú al hacer clic en cualquier enlace
+  };
 
   return (
-    <nav className="bg-gray-300 shadow-md fixed top-0 w-full z-50 overflow-x-hidden">
+    <nav
+      ref={navRef}
+      className="bg-gray-300 shadow-md fixed top-0 w-full z-50 overflow-x-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/#inicio">
           <img className="h-12 w-12 object-contain" src="logo.png" alt="logo" />
@@ -54,6 +75,7 @@ export default function Navbar() {
         </ul>
       </div>
 
+      {/* Menú mobile */}
       <div
         className={`md:hidden bg-white w-full overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-96 opacity-100 py-4 px-4" : "max-h-0 opacity-0 px-4"
@@ -61,32 +83,33 @@ export default function Navbar() {
       >
         <ul className="space-y-2 text-black font-medium">
           <li>
-            <a href="#inicio" className="block">
+            <a href="#inicio" className="block" onClick={handleMenuClick}>
               Inicio
             </a>
           </li>
           <li>
-            <a href="#servicios" className="block font-montserrat">
+            <a
+              href="#servicios"
+              className="block font-montserrat"
+              onClick={handleMenuClick}
+            >
               Servicios
             </a>
           </li>
           <li>
-            <a href="#nosotros" className="block">
+            <a href="#nosotros" className="block" onClick={handleMenuClick}>
               Nosotros
             </a>
           </li>
           <li>
-            <a href="#catalogo" className="block">
+            <a href="#catalogo" className="block" onClick={handleMenuClick}>
               Catálogo
             </a>
           </li>
           <li>
-            <Link
-              to="/#contacto"
-              className="text-white py-2 px-4 rounded-full hover:bg-gray-500"
-            >
+            <a href="#contacto" className="block" onClick={handleMenuClick}>
               Contacto
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
