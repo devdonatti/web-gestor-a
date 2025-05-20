@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -16,39 +14,23 @@ const Contacto = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        "service_4lav619", // Reemplázalo con tu Service ID
-        "template_4hn0c5n", // Reemplázalo con tu Template ID
-        formData,
-        "j_9tTIXVW-h70zlEw" // Reemplázalo con tu Public Key
-      )
-      .then(
-        (response) => {
-          toast.success("Mensaje enviado con éxito 🎉", {
-            position: "top-center",
-            autoClose: 3000,
-            theme: "colored",
-          });
-          setFormData({ nombre: "", email: "", mensaje: "" });
-        },
-        (error) => {
-          toast.error("Error al enviar el mensaje 😕", {
-            position: "top-center",
-            autoClose: 3000,
-            theme: "colored",
-          });
-          console.error("Error:", error);
-        }
-      );
+    const { nombre, email, mensaje } = formData;
+
+    const numeroWhatsApp = "5491144495484"; // ← Tu número de WhatsApp con código país, sin "+" ni espacios
+    const texto = `¡Hola! Soy ${nombre} (%0AEmail: ${email}) y quiero consultarte lo siguiente:%0A%0A${mensaje}`;
+    const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+
+    window.open(url, "_blank");
+
+    setFormData({ nombre: "", email: "", mensaje: "" });
   };
 
   return (
     <div
       id="contacto"
-      className="p-4 lg:p-20 flex flex-col items-center justify-center "
+      className="p-4 lg:p-20 flex flex-col items-center justify-center"
     >
-      <h1 className="text-4xl  font-bold font-montserrat mb-8 p-4 leading-normal uppercase text-white">
+      <h1 className="text-4xl font-bold font-montserrat mb-8 p-4 leading-normal uppercase text-white">
         Contactame
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2 lg:w-1/2">
@@ -81,8 +63,8 @@ const Contacto = () => {
           rows="5"
           required
         />
-        <button className="shadow-xl hover:shadow-blue-800 text-white border-2 border-gray-400 bg-blue-800 hover:bg-gray-300 rounded-lg py-4 px-8 my-6 uppercase text-xl font-bold">
-          Enviar
+        <button className="shadow-xl hover:shadow-green-600 text-white border-2 border-gray-400 bg-green-600 hover:bg-green-500 rounded-lg py-4 px-8 my-6 uppercase text-xl font-bold">
+          Enviar por WhatsApp
         </button>
       </form>
     </div>

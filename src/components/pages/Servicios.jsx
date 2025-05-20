@@ -19,25 +19,25 @@ const Servicios = () => {
       </h1>
 
       {/* Tarjetas de servicios */}
-      <div className="max-w-3xl mx-auto mb-6 ">
-        <div className="bg-blue-800 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
-          <p className="text-base md:text-lg font-montserrat text-white leading-relaxed">
+      <div className="max-w-3xl mx-auto mb-6">
+        <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+          <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
             <span className="text-xl font-bold">INSCRIPCIONES INICIALES</span>
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto mb-6">
-        <div className="bg-blue-800 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
-          <p className="text-base md:text-lg font-montserrat text-white leading-relaxed">
+        <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+          <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
             <span className="text-xl font-bold">TRANSFERENCIAS AUTOMOTOR</span>
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto mb-6">
-        <div className="bg-blue-800 rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
-          <p className="text-base md:text-lg font-montserrat text-white leading-relaxed">
+        <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+          <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
             <span className="text-xl font-bold">TRÁMITES VARIOS</span>
             <ul className="mt-4 list-disc pl-6">
               <li>Denuncia de venta</li>

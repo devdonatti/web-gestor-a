@@ -6,21 +6,21 @@ const Catalogo = () => {
     {
       id: 1,
       imagen: "/31.png",
-      titulo: "Formulario 04",
+      titulo: "Formularios",
       descripcion: "Descripción del producto 1",
       link: "https://mpago.la/2W3wyQM",
     },
     {
       id: 2,
       imagen: "/31.png",
-      titulo: "Formulario 08",
+      titulo: "Informes",
       descripcion: "Descripción del producto 2",
       link: "https://www.mercadopago.com.ar/link-del-producto2",
     },
     {
       id: 3,
       imagen: "/31.png",
-      titulo: "Formulario 02",
+      titulo: "Servicios",
       descripcion: "Descripción del producto 3",
       link: "https://www.mercadopago.com.ar/link-del-producto3",
     },
@@ -57,14 +57,12 @@ const Catalogo = () => {
               {producto.descripcion}
             </p>
             {/* Botón que redirige a Mercado Pago */}
-            <a
-              href={producto.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-800  text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300"
+            <Link
+              to="/productos"
+              className="text-blue-700 py-2 px-4 rounded-full hover:bg-gray-500"
             >
-              Comprar Ahora
-            </a>
+              Comprar ahora
+            </Link>
           </div>
         ))}
       </div>

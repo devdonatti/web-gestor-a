@@ -1,71 +1,100 @@
-import React from "react";
+import React, { useState } from "react";
+import productos from "../../data/productos.json";
+import FormularioCompraModal from "../FormularioCompraModal";
 
 const Productos = () => {
-  const productos = [
-    {
-      id: 1,
-      imagen: "/31.png",
-      titulo: "Formulario 04",
-      descripcion: "Descripción del producto 1",
-      link: "https://mpago.la/2W3wyQM",
-    },
-    {
-      id: 2,
-      imagen: "/31.png",
-      titulo: "Formulario 08",
-      descripcion: "Descripción del producto 2",
-      link: "https://www.mercadopago.com.ar/link-del-producto2",
-    },
-    {
-      id: 3,
-      imagen: "/31.png",
-      titulo: "Formulario 02",
-      descripcion: "Descripción del producto 3",
-      link: "https://www.mercadopago.com.ar/link-del-producto3",
-    },
-    // Agrega más productos según sea necesario
-  ];
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+
+  const abrirFormulario = (producto) => {
+    setProductoSeleccionado(producto);
+  };
+
+  const cerrarFormulario = () => {
+    setProductoSeleccionado(null);
+  };
+
+  const renderSeccion = (titulo, subtitulo, tipo) => (
+    <section className="mb-20">
+      <div className="text-center mb-10">
+        <h1 className="inline-block text-2xl sm:text-3xl px-4 py-2 bg-gray-300 font-bold text-blue-800 font-montserrat rounded-md">
+          {titulo}
+        </h1>
+        {subtitulo && <p className="text-lg text-gray-700 mt-2">{subtitulo}</p>}
+        <div className="w-20 h-1 bg-blue-800 mx-auto mt-4 rounded"></div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
+        {productos
+          .filter((p) => p.tipo === tipo)
+          .map((producto) => (
+            <ProductoCard
+              key={producto.id}
+              producto={producto}
+              onComprar={abrirFormulario}
+            />
+          ))}
+      </div>
+    </section>
+  );
 
   return (
-    <div className="py-10">
-      <h1 className="text-3xl font-bold m-5 pt-7 text-center mb-10 font-montserrat text-white">
-        Comprá tus formularios
-      </h1>
-
-      {/* Contenedor de las tarjetas */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-        {productos.map((producto) => (
-          <div
-            key={producto.id}
-            className="bg-white rounded-lg shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl duration-300"
-          >
-            {/* Imagen del producto */}
-            <img
-              src={producto.imagen}
-              alt={producto.titulo}
-              className="w-full h-56 object-cover rounded-md mb-4"
-            />
-            {/* Título y descripción del producto */}
-            <h2 className="text-xl font-bold text-blue-800 mb-2">
-              {producto.titulo}
-            </h2>
-            <p className="text-base text-gray-700 mb-4">
-              {producto.descripcion}
-            </p>
-            {/* Botón que redirige a Mercado Pago */}
-            <a
-              href={producto.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-800 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300"
-            >
-              Comprar Ahora
-            </a>
-          </div>
-        ))}
+    <div className="pt-28 pb-16 bg-gray-100 min-h-screen">
+      {" "}
+      {/* pt-28 = margen superior */}
+      <div className="text-center mb-16 px-6">
+        <h2 className="inline-block text-2xl sm:text-4xl px-4 py-2 bg-gray-300 font-bold text-blue-800 font-montserrat rounded-md leading-relaxed">
+          ¿Sos gestor del automotor? <br /> ¿Necesitás formularios?
+        </h2>
+        <p className="text-lg text-gray-700 mt-6 max-w-3xl mx-auto">
+          Pedinos la lista de precios por WhatsApp o hacé tu compra directa.
+          Vendemos por mayor, por unidad y hacemos envíos hasta la puerta de tu
+          local.
+        </p>
       </div>
+      {renderSeccion(
+        "Precio Mayorista o Mandatario",
+        "Formularios para autos y motos",
+        "mayorista"
+      )}
+      {renderSeccion(
+        "Precio Particular",
+        "Formularios por unidad para autos o motos",
+        "particular"
+      )}
+      {renderSeccion("Informes Disponibles", null, "informe")}
+      {renderSeccion("Servicios que Ofrecemos", null, "servicios")}
+      {productoSeleccionado && (
+        <FormularioCompraModal
+          producto={productoSeleccionado}
+          onClose={cerrarFormulario}
+        />
+      )}
     </div>
   );
 };
+
+const ProductoCard = ({ producto, onComprar }) => (
+  <div className="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-200 h-[420px]">
+    <img
+      src={producto.imagen}
+      alt={producto.titulo}
+      className="w-full h-40 object-cover rounded-lg mb-4"
+    />
+    <div className="flex flex-col flex-1">
+      <h2 className="text-xl font-semibold text-blue-800 mb-2">
+        {producto.titulo}
+      </h2>
+      <div className="text-sm text-gray-700 mb-4 overflow-y-auto max-h-20 px-1">
+        {producto.descripcion}
+      </div>
+    </div>
+    <button
+      onClick={() => onComprar(producto)}
+      className="bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300 mt-2"
+    >
+      Comprar Ahora
+    </button>
+  </div>
+);
 
 export default Productos;
