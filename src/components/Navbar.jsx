@@ -83,33 +83,33 @@ export default function Navbar() {
       >
         <ul className="space-y-2 text-black font-medium">
           <li>
-            <a href="#inicio" className="block" onClick={handleMenuClick}>
+            <Link to="/#inicio" className="block" onClick={handleMenuClick}>
               Inicio
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#servicios"
+            <Link
+              to="/#servicios"
               className="block font-montserrat"
               onClick={handleMenuClick}
             >
               Servicios
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#nosotros" className="block" onClick={handleMenuClick}>
+            <Link to="/#nosotros" className="block" onClick={handleMenuClick}>
               Nosotros
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#catalogo" className="block" onClick={handleMenuClick}>
+            <Link to="/#catalogo" className="block" onClick={handleMenuClick}>
               Catálogo
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contacto" className="block" onClick={handleMenuClick}>
+            <Link to="/#contacto" className="block" onClick={handleMenuClick}>
               Contacto
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

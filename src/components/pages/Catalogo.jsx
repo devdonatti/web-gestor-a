@@ -59,7 +59,7 @@ const Catalogo = () => {
             {/* Botón que redirige a Mercado Pago */}
             <Link
               to="/productos"
-              className="text-blue-700 py-2 px-4 rounded-full hover:bg-gray-500"
+              className="text-blue-700 font-bold py-2 px-4 rounded-full bg-gray-400 hover:bg-gray-500"
             >
               Comprar ahora
             </Link>

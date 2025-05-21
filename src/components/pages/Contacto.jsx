@@ -16,7 +16,7 @@ const Contacto = () => {
 
     const { nombre, email, mensaje } = formData;
 
-    const numeroWhatsApp = "5491144495484"; // ← Tu número de WhatsApp con código país, sin "+" ni espacios
+    const numeroWhatsApp = "5491150406299"; // ← Tu número de WhatsApp con código país, sin "+" ni espacios
     const texto = `¡Hola! Soy ${nombre} (%0AEmail: ${email}) y quiero consultarte lo siguiente:%0A%0A${mensaje}`;
     const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
 

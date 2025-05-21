@@ -42,7 +42,7 @@ const Productos = () => {
       {" "}
       {/* pt-28 = margen superior */}
       <div className="text-center mb-16 px-6">
-        <h2 className="inline-block text-2xl sm:text-4xl px-4 py-2 bg-gray-300 font-bold text-blue-800 font-montserrat rounded-md leading-relaxed">
+        <h2 className="inline-block text-4xl sm:text-4xl px-4 py-2 bg-blue-800 font-bold text-white font-montserrat rounded-md leading-relaxed">
           ¿Sos gestor del automotor? <br /> ¿Necesitás formularios?
         </h2>
         <p className="text-lg text-gray-700 mt-6 max-w-3xl mx-auto">
@@ -78,7 +78,7 @@ const ProductoCard = ({ producto, onComprar }) => (
     <img
       src={producto.imagen}
       alt={producto.titulo}
-      className="w-full h-40 object-cover rounded-lg mb-4"
+      className="w-full h-40 sm:h-48 object-contain rounded-lg mb-4"
     />
     <div className="flex flex-col flex-1">
       <h2 className="text-xl font-semibold text-blue-800 mb-2">

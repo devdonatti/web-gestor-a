@@ -19,7 +19,7 @@ const Servicios = () => {
       </h1>
 
       {/* Tarjetas de servicios */}
-      <div className="max-w-3xl mx-auto mb-6">
+      <div className="max-w-3xl  mb-6 mx-4 sm:mx-auto ">
         <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
           <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
             <span className="text-xl font-bold">INSCRIPCIONES INICIALES</span>
@@ -27,7 +27,7 @@ const Servicios = () => {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto mb-6">
+      <div className="max-w-3xl mb-6 mx-4 sm:mx-auto ">
         <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
           <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
             <span className="text-xl font-bold">TRANSFERENCIAS AUTOMOTOR</span>
@@ -35,7 +35,7 @@ const Servicios = () => {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto mb-6">
+      <div className="max-w-3xl  mb-6 mx-4 sm:mx-auto ">
         <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
           <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
             <span className="text-xl font-bold">TRÁMITES VARIOS</span>
