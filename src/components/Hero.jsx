@@ -26,7 +26,7 @@ const Hero = () => {
 
       {/* Título y subtítulo debajo de la card */}
       <div className="absolute inset-x-0 bottom-0 mb-6 z-10 text-center px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 font-montserrat text-white hover:text-gray-300 transition-all duration-300">
+        <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold mb-2 font-montserrat text-white hover:text-gray-300 transition-all duration-300">
           GESTORÍA CISNEROS
         </h2>
         <p className="text-sm sm:text-base md:text-lg font-montserrat text-white">

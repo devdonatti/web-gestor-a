@@ -5,23 +5,23 @@ const Catalogo = () => {
   const productos = [
     {
       id: 1,
-      imagen: "/31.png",
+      imagen: "/formu.png",
       titulo: "Formularios",
-      descripcion: "Descripción del producto 1",
+      descripcion: "",
       link: "https://mpago.la/2W3wyQM",
     },
     {
       id: 2,
-      imagen: "/31.png",
+      imagen: "/inf.png",
       titulo: "Informes",
-      descripcion: "Descripción del producto 2",
+      descripcion: "",
       link: "https://www.mercadopago.com.ar/link-del-producto2",
     },
     {
       id: 3,
-      imagen: "/31.png",
+      imagen: "/serv.png",
       titulo: "Servicios",
-      descripcion: "Descripción del producto 3",
+      descripcion: "",
       link: "https://www.mercadopago.com.ar/link-del-producto3",
     },
     // Agrega más productos según sea necesario

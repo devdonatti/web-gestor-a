@@ -77,7 +77,7 @@ export default function Navbar() {
 
       {/* Menú mobile */}
       <div
-        className={`md:hidden bg-white w-full overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden bg-white font-montserrat text-center w-full overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-96 opacity-100 py-4 px-4" : "max-h-0 opacity-0 px-4"
         }`}
       >
