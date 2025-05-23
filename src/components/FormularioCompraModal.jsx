@@ -28,6 +28,16 @@ const FormularioCompraModal = ({ producto, onClose }) => {
 
   const handleFormularioSubmit = (e) => {
     e.preventDefault();
+
+    const telefonoValido = /^[0-9]{8,}$/.test(formData.telefono);
+    const dniValido = /^[0-9]{7,8}$/.test(formData.dni);
+    const nombreValido = /^[a-zA-ZÀ-ÿ\s]{3,40}$/.test(formData.nombre);
+
+    if (!telefonoValido || !dniValido || !nombreValido) {
+      alert("Por favor, completá todos los campos correctamente.");
+      return;
+    }
+
     setMostrarFirma(true);
   };
 
@@ -99,6 +109,8 @@ const FormularioCompraModal = ({ producto, onClose }) => {
                 name="nombre"
                 placeholder="Nombre completo"
                 required
+                pattern="^[a-zA-ZÀ-ÿ\s]{3,40}$"
+                title="Solo letras y espacios, entre 3 y 40 caracteres"
                 className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-800"
                 value={formData.nombre}
                 onChange={handleChange}
@@ -107,6 +119,8 @@ const FormularioCompraModal = ({ producto, onClose }) => {
                 name="dni"
                 placeholder="DNI"
                 required
+                pattern="^[0-9]{7,8}$"
+                title="Debe contener 7 u 8 dígitos numéricos"
                 className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-800"
                 value={formData.dni}
                 onChange={handleChange}
@@ -115,6 +129,9 @@ const FormularioCompraModal = ({ producto, onClose }) => {
                 name="telefono"
                 placeholder="Teléfono"
                 required
+                type="tel"
+                pattern="[0-9]{8,}"
+                title="Debe contener al menos 8 dígitos numéricos"
                 className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-800"
                 value={formData.telefono}
                 onChange={handleChange}
@@ -123,6 +140,7 @@ const FormularioCompraModal = ({ producto, onClose }) => {
                 name="email"
                 placeholder="Email"
                 required
+                type="email"
                 className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-800"
                 value={formData.email}
                 onChange={handleChange}

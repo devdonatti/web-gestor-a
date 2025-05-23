@@ -1,6 +1,45 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const Servicios = () => {
+  const servicios = [
+    {
+      title: "INSCRIPCIONES INICIALES",
+      items: [],
+    },
+    {
+      title: "TRANSFERENCIAS AUTOMOTOR",
+      items: [],
+    },
+    {
+      title: "TRÁMITES VARIOS",
+      items: [
+        "Denuncia de venta",
+        "Denuncia de compra y posesión",
+        "Reposición de chapa metálica",
+        "Alta/Baja de motor",
+        "Alta/Baja de carrocería",
+        "Baja por destrucción total",
+        "Denuncia de robo",
+        "Baja por exportación",
+        "Regularización de deudas",
+      ],
+    },
+  ];
+
   return (
     <div className="relative py-10">
       {/* Imagen de fondo */}
@@ -18,51 +57,47 @@ const Servicios = () => {
         Servicios
       </h1>
 
-      {/* Tarjetas de servicios */}
-      <div className="max-w-3xl  mb-6 mx-4 sm:mx-auto ">
-        <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
-          <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
-            <span className="text-xl font-bold">INSCRIPCIONES INICIALES</span>
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-3xl mb-6 mx-4 sm:mx-auto ">
-        <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
-          <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
-            <span className="text-xl font-bold">TRANSFERENCIAS AUTOMOTOR</span>
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-3xl  mb-6 mx-4 sm:mx-auto ">
-        <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
-          <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
-            <span className="text-xl font-bold">TRÁMITES VARIOS</span>
-            <ul className="mt-4 list-disc pl-6">
-              <li>Denuncia de venta</li>
-              <li>Denuncia de compra y posesión</li>
-              <li>Reposición de chapa metálica</li>
-              <li>Alta/Baja de motor</li>
-              <li>Alta/Baja de carrocería</li>
-              <li>Baja por destrucción total</li>
-              <li>Denuncia de robo</li>
-              <li>Baja por exportación</li>
-              <li>Regularización de deudas</li>
-            </ul>
-          </p>
-        </div>
-      </div>
+      {/* Tarjetas de servicios animadas */}
+      {servicios.map((servicio, i) => (
+        <motion.div
+          key={i}
+          className="max-w-3xl mb-6 mx-4 sm:mx-auto"
+          custom={i}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ amount: 0.3 }} // <--- esto permite reanimar al hacer scroll
+        >
+          <div className="bg-white rounded-lg shadow-xl p-8 z-10 relative transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <p className="text-base md:text-lg font-montserrat text-blue-800 leading-relaxed">
+              <span className="text-xl font-bold">{servicio.title}</span>
+              {servicio.items.length > 0 && (
+                <ul className="mt-4 list-disc pl-6">
+                  {servicio.items.map((item, j) => (
+                    <li key={j}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </p>
+          </div>
+        </motion.div>
+      ))}
 
       {/* Botón de consulta */}
-      <div className="flex justify-center mt-8 z-20 relative">
+      <motion.div
+        className="flex justify-center mt-8 z-20 relative"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         <a
           className="bg-blue-800 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
-          href="https://wa.me/1150406299 "
+          href="https://wa.me/1150406299"
         >
           CONSULTA via whatsapp
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Catalogo = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false, // <--- Aquí está el cambio
+    });
+  }, []);
+
   const productos = [
     {
       id: 1,
@@ -24,7 +34,6 @@ const Catalogo = () => {
       descripcion: "",
       link: "https://www.mercadopago.com.ar/link-del-producto3",
     },
-    // Agrega más productos según sea necesario
   ];
 
   return (
@@ -38,10 +47,12 @@ const Catalogo = () => {
 
       {/* Contenedor de las tarjetas */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-        {productos.map((producto) => (
+        {productos.map((producto, index) => (
           <div
             key={producto.id}
-            className="bg-white rounded-lg  text-center shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl duration-300"
+            data-aos="fade-up"
+            data-aos-delay={index * 150} // 0ms, 150ms, 300ms, etc.
+            className="bg-white rounded-lg text-center shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl duration-300"
           >
             {/* Imagen del producto */}
             <img

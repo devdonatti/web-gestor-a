@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GlareCard } from "../components/ui/Card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1400, // Duración de la animación
+      easing: "ease-in-out",
+      once: true, // Solo anima una vez cuando entra en viewport
+      mirror: false,
+    });
+  }, []);
+
   return (
     <div className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden pb-16">
       {/* Imagen de fondo */}
@@ -24,12 +35,24 @@ const Hero = () => {
         </GlareCard>
       </div>
 
-      {/* Título y subtítulo debajo de la card */}
+      {/* Título y subtítulo animados suavemente */}
       <div className="absolute inset-x-0 bottom-0 mb-6 z-10 text-center px-4">
-        <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold mb-2 font-montserrat text-white hover:text-gray-300 transition-all duration-300">
+        <h2
+          data-aos="fade-right"
+          data-aos-offset="100"
+          data-aos-duration="1400"
+          className="text-4xl sm:text-3xl md:text-4xl font-bold mb-2 font-montserrat text-white hover:text-gray-300 transition-all duration-300"
+        >
           GESTORÍA CISNEROS
         </h2>
-        <p className="text-sm sm:text-base md:text-lg font-montserrat text-white">
+
+        <p
+          data-aos="fade-left"
+          data-aos-offset="100"
+          data-aos-duration="1600"
+          data-aos-delay="200"
+          className="text-sm p-3 sm:text-base md:text-lg font-montserrat text-white"
+        >
           Somos una gestoría comprometida a resolver tus problemas registrales.
         </p>
       </div>
