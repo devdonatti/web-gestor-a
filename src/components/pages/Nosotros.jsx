@@ -23,7 +23,6 @@ const Nosotros = () => {
       {/* Título */}
       <h1
         id="nosotros"
-        data-aos="fade-down"
         className="text-3xl md:text-3xl uppercase font-bold mb-8 font-montserrat text-white text-center z-10 relative"
       >
         Nosotros

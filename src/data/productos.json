@@ -267,8 +267,16 @@
   {
     "id": 35,
     "imagen": "/verazz.png",
-    "titulo": "DESAFECTACION DE VERAZ ",
+    "titulo": "Desafectación de Veraz ",
     "descripcion": "¿Estás en veraz? Contratá nuestro servicio de desafectación de veraz, nos pondremos en contacto para asesorarte.",
+    "link": "https://mpago.la/1ewCLG8",
+    "tipo": "servicios"
+  },
+  {
+    "id": 36,
+    "imagen": "/logo.png",
+    "titulo": "Servicio de Gestoría Integral para Empresas",
+    "descripcion": "¿Tenés una empresa y querés delegar la gestión de trámites de tus vehículos?\n\nNos encargamos de inscripciones, transferencias, informes y más, con la experiencia y capacitación necesarias. Ofrecemos un servicio personalizado con abono mensual fijo, para que no pagues por trámite individual ni tengas sorpresas.\n\nConcentrate en tu negocio, nosotros nos ocupamos del resto.\n¡Delegá en nosotros y olvidate de los trámites!",
     "link": "https://mpago.la/1ewCLG8",
     "tipo": "servicios"
   }

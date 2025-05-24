@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import productos from "../../data/productos.json";
 import FormularioCompraModal from "../FormularioCompraModal";
 
 const Productos = () => {
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const tipoFiltrado = params.get("tipo"); // 'formularios', 'informes', etc.
 
   const abrirFormulario = (producto) => {
     setProductoSeleccionado(producto);
@@ -39,8 +44,6 @@ const Productos = () => {
 
   return (
     <div className="pt-28 pb-16 bg-gray-100 min-h-screen">
-      {" "}
-      {/* pt-28 = margen superior */}
       <div className="text-center mb-16 px-6">
         <h2 className="inline-block text-4xl sm:text-4xl px-4 py-2 bg-blue-800 font-bold text-white font-montserrat rounded-md leading-relaxed">
           ¿Sos gestor del automotor? <br /> ¿Necesitás formularios?
@@ -51,18 +54,44 @@ const Productos = () => {
           local.
         </p>
       </div>
-      {renderSeccion(
-        "Precio Mayorista o Mandatario",
-        "Formularios para autos y motos",
-        "mayorista"
+
+      {!tipoFiltrado && (
+        <>
+          {renderSeccion(
+            "Precio Mayorista o Mandatario",
+            "Formularios para autos y motos",
+            "mayorista"
+          )}
+          {renderSeccion(
+            "Precio Particular",
+            "Formularios por unidad para autos o motos",
+            "particular"
+          )}
+          {renderSeccion("Informes Disponibles", null, "informe")}
+          {renderSeccion("Servicios que Ofrecemos", null, "servicios")}
+        </>
       )}
-      {renderSeccion(
-        "Precio Particular",
-        "Formularios por unidad para autos o motos",
-        "particular"
+
+      {tipoFiltrado === "formularios" && (
+        <>
+          {renderSeccion(
+            "Precio Mayorista o Mandatario",
+            "Formularios para autos y motos",
+            "mayorista"
+          )}
+          {renderSeccion(
+            "Precio Particular",
+            "Formularios por unidad para autos o motos",
+            "particular"
+          )}
+        </>
       )}
-      {renderSeccion("Informes Disponibles", null, "informe")}
-      {renderSeccion("Servicios que Ofrecemos", null, "servicios")}
+
+      {tipoFiltrado === "informes" &&
+        renderSeccion("Informes Disponibles", null, "informe")}
+      {tipoFiltrado === "servicios" &&
+        renderSeccion("Servicios que Ofrecemos", null, "servicios")}
+
       {productoSeleccionado && (
         <FormularioCompraModal
           producto={productoSeleccionado}
@@ -74,26 +103,26 @@ const Productos = () => {
 };
 
 const ProductoCard = ({ producto, onComprar }) => (
-  <div className="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-200 h-[420px]">
+  <div className="bg-white rounded-xl shadow-md p-6 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-200 h-[420px]">
     <img
       src={producto.imagen}
       alt={producto.titulo}
       className="w-full h-40 sm:h-48 object-contain rounded-lg mb-4"
     />
-    <div className="flex flex-col flex-1">
-      <h2 className="text-xl font-semibold text-blue-800 mb-2">
-        {producto.titulo}
-      </h2>
-      <div className="text-sm text-gray-700 mb-4 overflow-y-auto max-h-20 px-1">
-        {producto.descripcion}
-      </div>
+    <h2 className="text-xl font-semibold text-blue-800 mb-2">
+      {producto.titulo}
+    </h2>
+    <div className="text-sm text-gray-700 overflow-y-auto h-16 mb-4 px-1">
+      {producto.descripcion}
     </div>
-    <button
-      onClick={() => onComprar(producto)}
-      className="bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300 mt-2"
-    >
-      Comprar Ahora
-    </button>
+    <div className="mt-auto">
+      <button
+        onClick={() => onComprar(producto)}
+        className="bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300"
+      >
+        Comprar Ahora
+      </button>
+    </div>
   </div>
 );
 
