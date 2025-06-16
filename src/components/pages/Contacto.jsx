@@ -63,8 +63,8 @@ const Contacto = () => {
           rows="5"
           required
         />
-        <button className="shadow-xl hover:shadow-green-600 text-white border-2 border-gray-400 bg-green-600 hover:bg-green-500 rounded-lg py-4 px-8 my-6 uppercase text-xl font-bold">
-          Enviar por WhatsApp
+        <button className="shadow-xl hover:shadow-green-600 text-white border-2 border-gray-400 bg-gray-400 hover:bg-green-500 rounded-lg py-4 px-8 my-6 uppercase text-xl font-bold">
+          Enviar
         </button>
       </form>
     </div>

@@ -24,15 +24,16 @@ const Hero = () => {
 
       {/* Card centrada con el logo */}
       <div id="inicio" className="z-10 flex justify-center items-center mt-10">
-        <GlareCard className="p-6 text-blue-900 text-center">
-          <div className="flex justify-center items-center w-full h-full">
-            <img
-              className="w-40 h-40 sm:w-56 sm:h-56 object-contain"
-              src="logo.png"
-              alt="Logo"
-            />
-          </div>
-        </GlareCard>
+        <div className="flex justify-center items-center w-100 h-100">
+          <img
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-duration="1400"
+            className="w-100 h-100 sm:w-100 sm:h-100 object-contain"
+            src="logo2.png"
+            alt="Logo"
+          />
+        </div>
       </div>
 
       {/* Título y subtítulo animados suavemente */}
