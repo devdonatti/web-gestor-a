@@ -63,7 +63,7 @@ const Catalogo = () => {
             </p>
             <Link
               to={`/productos?tipo=${producto.titulo.toLowerCase()}`}
-              className="text-blue-700 font-bold py-2 px-4 rounded-full bg-gray-400 hover:bg-gray-500"
+              className="text-blue-700  py-2 px-4 rounded-full hover:bg-gray-500"
             >
               Ver {producto.titulo}
             </Link>
@@ -73,7 +73,7 @@ const Catalogo = () => {
 
       <div className="flex justify-center">
         <Link to="/productos">
-          <button className="bg-blue-800 mt-5 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300">
+          <button className="bg-blue-800 mt-10 text-white  py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300">
             Ver más
           </button>
         </Link>

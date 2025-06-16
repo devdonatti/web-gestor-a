@@ -250,12 +250,13 @@
   },
   {
     "id": 33,
-    "imagen": "/cdm.png",
-    "titulo": "CRD   ",
-    "descripcion": "Constancia de retencion de documentacion ",
+    "imagen": "/logo.png",
+    "titulo": "TRANSFERENCIAS DEL AUTOMOTOR",
+    "descripcion": "¿Compraste un vehículo y querés que quede a tu nombre?\n¡Nos ocupamos de todo! Gestionamos el trámite completo para que no tengas que preocuparte por nada:\n● Verificación policial\n\n● Armado de la carpeta\n\n● Ingreso del trámite en el Registro\n\n● Retiro de la documentación final\n\nSolo necesitamos que firmes... ¡y nosotros nos encargamos del resto!",
     "link": "https://www.mercadopago.com.ar/link-del-producto3",
-    "tipo": "informe"
+    "tipo": "servicios"
   },
+
   {
     "id": 34,
     "imagen": "/informe.jpg",
@@ -277,6 +278,38 @@
     "imagen": "/logo.png",
     "titulo": "Servicio de Gestoría Integral para Empresas",
     "descripcion": "¿Tenés una empresa y querés delegar la gestión de trámites de tus vehículos?\n\nNos encargamos de inscripciones, transferencias, informes y más, con la experiencia y capacitación necesarias. Ofrecemos un servicio personalizado con abono mensual fijo, para que no pagues por trámite individual ni tengas sorpresas.\n\nConcentrate en tu negocio, nosotros nos ocupamos del resto.\n¡Delegá en nosotros y olvidate de los trámites!",
+    "link": "https://mpago.la/1ewCLG8",
+    "tipo": "servicios"
+  },
+  {
+    "id": 37,
+    "imagen": "/logo.png",
+    "titulo": "CÉDULA DE POSESIÓN",
+    "descripcion": "Servicio de Gestoría\n¿Necesitás renovar la cédula de posesión de tu vehículo?\n\nRecordá que, además de gestionar la cédula de posesión, trabajamos en conjunto con ABOGADOS EXPERTOS para ayudarte con los trámites legales que el registro exige:\n\nProceso sucesorio\n\nUsucapión\n\nTe acompañamos en la regularización de la titularidad de tu vehículo, facilitando todos los pasos para que puedas circular con tranquilidad y cumpliendo con la normativa vigente.\n\n¡Consultanos y resolvé tu situación hoy mismo!",
+    "link": "https://mpago.la/1ewCLG8",
+    "tipo": "servicios"
+  },
+  {
+    "id": 38,
+    "imagen": "/logo.png",
+    "titulo": "DENUNCIA DE VENTA",
+    "descripcion": "¿Vendiste tu vehículo y el comprador no hizo la transferencia?\nPodés dejar registrado en el Registro Automotor la denuncia de venta a nombre del comprador. Este trámite te libera de futuras responsabilidades civiles, penales y económicas relacionadas con ese vehículo.\nNosotros te ayudamos a gestionarlo de forma rápida y segura.",
+    "link": "https://mpago.la/1ewCLG8",
+    "tipo": "servicios"
+  },
+  {
+    "id": 39,
+    "imagen": "/logo.png",
+    "titulo": "DENUNCIA DE ROBO",
+    "descripcion": "¿Te robaron el vehículo y la aseguradora te pide formularios que no entendés?\nSabemos lo difícil que es atravesar esta situación. Por eso, nos encargamos de gestionar todo el trámite administrativo que necesitás presentar ante la compañía de seguros para que puedas cobrar tu indemnización sin demoras ni complicaciones.\nTe entregamos todo listo para que solo tengas que presentarlo.",
+    "link": "https://mpago.la/1ewCLG8",
+    "tipo": "servicios"
+  },
+  {
+    "id": 40,
+    "imagen": "/logo.png",
+    "titulo": "RESOLUCIÓN DE INFRACCIONES",
+    "descripcion": "¿Tenés infracciones de tránsito?\nNos ocupamos de resolver tus infracciones de manera rápida, legal y en todo el territorio argentino. Ya sea para circular tranquilo, vender tu vehículo o realizar trámites registrales, te ayudamos a regularizar tu situación sin complicaciones.\nConsultanos y resolvelo hoy mismo.",
     "link": "https://mpago.la/1ewCLG8",
     "tipo": "servicios"
   }

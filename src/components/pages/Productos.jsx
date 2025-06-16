@@ -45,8 +45,8 @@ const Productos = () => {
   return (
     <div className="pt-28 pb-16 bg-gray-100 min-h-screen">
       <div className="text-center mb-16 px-6">
-        <h2 className="inline-block text-4xl sm:text-4xl px-4 py-2 bg-blue-800 font-bold text-white font-montserrat rounded-md leading-relaxed">
-          ¿Sos gestor del automotor? <br /> ¿Necesitás formularios?
+        <h2 className="inline-block text-4xl sm:text-4xl px-4 py-2 text-blue-800   font-montserrat rounded-md leading-relaxed">
+          ¿Sos gestor del automotor? ¿Necesitás formularios?
         </h2>
         <p className="text-lg text-gray-700 mt-6 max-w-3xl mx-auto">
           Pedinos la lista de precios por WhatsApp o hacé tu compra directa.
@@ -103,7 +103,7 @@ const Productos = () => {
 };
 
 const ProductoCard = ({ producto, onComprar }) => (
-  <div className="bg-white rounded-xl shadow-md p-6 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-200 h-[420px]">
+  <div className="bg-white rounded-xl shadow-md p-6 flex flex-col text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-200 h-[460px]">
     <img
       src={producto.imagen}
       alt={producto.titulo}
@@ -115,13 +115,24 @@ const ProductoCard = ({ producto, onComprar }) => (
     <div className="text-sm text-gray-700 overflow-y-auto h-16 mb-4 px-1">
       {producto.descripcion}
     </div>
-    <div className="mt-auto">
+    <div className="mt-auto flex flex-col gap-2">
       <button
         onClick={() => onComprar(producto)}
         className="bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300"
       >
         Comprar Ahora
       </button>
+
+      <a
+        href={`https://wa.me/541150406299?text=Hola,%20tengo%20una%20consulta%20sobre%20el%20producto:%20${encodeURIComponent(
+          producto.titulo
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-500 hover:bg-green-600 text-white text-sm py-2 px-6 rounded-full transition duration-300"
+      >
+        Consultar por WhatsApp
+      </a>
     </div>
   </div>
 );
