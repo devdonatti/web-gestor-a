@@ -51,7 +51,7 @@ const Hero = () => {
           data-aos-offset="100"
           data-aos-duration="1600"
           data-aos-delay="200"
-          className="text-lg sm:text-base md:text-lg p-3 font-montserrat text-white"
+          className="text-sm p-3 sm:text-base md:text-lg font-montserrat text-white"
         >
           Somos una gestoría comprometida a resolver tus problemas registrales.
         </p>
